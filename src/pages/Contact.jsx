@@ -188,7 +188,7 @@ export default function Contact() {
       {/* ── Dark hero — photo, no fade ── */}
       <div className="relative flex items-center justify-center overflow-hidden bg-ink" style={{ minHeight: '80vh' }}>
         <img
-          src="/background/DSCF5857.JPG"
+          src="/background/DSCF5857.jpg"
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
           style={{ opacity: 0.45, objectPosition: 'center 20%' }}
