@@ -32,11 +32,10 @@ export default function Hero() {
             src={`/${heroPhotos[photoIndex].src}`}
             alt=""
             className="w-full h-full object-cover"
-            style={{ objectPosition: heroPhotos[photoIndex].position || 'center' }}
+            style={{ objectPosition: heroPhotos[photoIndex].position || 'center', willChange: 'transform' }}
             initial={{ scale: photoIndex === 0 ? 1.0 : 1.04 }}
             animate={{ scale: 1.0 }}
             transition={{ duration: 11, ease: 'linear' }}
-            style={{ willChange: 'transform' }}
             fetchPriority={photoIndex === 0 ? 'high' : 'low'}
             loading={photoIndex === 0 ? 'eager' : 'lazy'}
           />
