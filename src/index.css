@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #f5eddb;
+    color: #1c0d04;
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Subtle paper texture + depth overlay — fixed so it sits behind everything */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 60% at 15% 20%, rgba(200,146,42,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 85% 75%, rgba(181,66,10,0.13)  0%, transparent 65%),
+      radial-gradient(ellipse 70% 40% at 50% 50%, rgba(200,146,42,0.10) 0%, transparent 80%);
+  }
+
+  /* Paper grain — very subtle, adds tactile depth */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 250px 250px;
+  }
+
+  /* Make sure actual content sits above the overlays */
+  #root {
+    position: relative;
+    z-index: 2;
+  }
+
+  img { display: block; max-width: 100%; }
+  a   { color: inherit; text-decoration: none; }
+  ul  { list-style: none; }
+  button { cursor: pointer; background: none; border: none; }
+}
+
+/* ── Instagram card ─────────────────────────── */
+.ig-live-card {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5d9c8;
+  box-shadow: 0 20px 60px rgba(42,18,8,0.12);
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.ig-live-card.visible { opacity: 1; transform: translateY(0); }
+
+.ig-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #f3ead9;
+  border-bottom: 1px solid #e5d9c8;
+}
+.ig-browser-dots { display: flex; gap: 5px; }
+.ig-browser-dots span { width: 8px; height: 8px; border-radius: 50%; display: block; }
+.ig-browser-url {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.5rem;
+  color: #9a7b5a;
+  letter-spacing: 0.04em;
+  flex: 1; text-align: center;
+}
+
+.ig-page { padding: 12px; }
+.ig-page-nav {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5d9c8;
+  margin-bottom: 12px;
+}
+.ig-wordmark {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #120901;
+}
+
+.ig-profile-row { display: flex; gap: 12px; margin-bottom: 12px; }
+.ig-profile-pic {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid #c49a2e;
+  overflow: hidden; flex-shrink: 0;
+}
+.ig-profile-pic img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.ig-profile-details { flex: 1; min-width: 0; }
+.ig-username { font-family: 'Jost', sans-serif; font-size: 0.55rem; font-weight: 500; color: #120901; letter-spacing: 0.02em; margin-bottom: 1px; }
+.ig-fullname { font-family: 'Jost', sans-serif; font-size: 0.48rem; color: #9a7b5a; margin-bottom: 5px; }
+.ig-stats-row { display: flex; gap: 8px; margin-bottom: 6px; }
+.ig-stats-row span { font-family: 'Jost', sans-serif; font-size: 0.45rem; color: #9a7b5a; }
+.ig-stats-row b { color: #120901; }
+.ig-bio { font-family: 'Jost', sans-serif; font-size: 0.46rem; color: #9a7b5a; line-height: 1.5; margin-bottom: 8px; }
+.ig-bio b { color: #120901; }
+
+.ig-follow-btn {
+  display: block; width: 100%;
+  padding: 5px 0; border-radius: 4px;
+  background: #120901; color: #faf4eb;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.5rem; font-weight: 500;
+  letter-spacing: 0.06em; text-align: center;
+  cursor: default; border: none;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+.ig-follow-btn.following { background: #f3ead9; color: #120901; border: 1px solid #c49a2e; }
+
+.ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; border-radius: 4px; overflow: hidden; }
+.ig-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; }
+
+.ig-cursor {
+  position: absolute; top: 0; left: 0;
+  pointer-events: none; opacity: 0; z-index: 30;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* ── Hover line draw ───────────────────────── */
+.line-draw {
+  position: relative;
+  display: inline-block;
+}
+.line-draw::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: currentColor;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.line-draw:hover::after { width: 100%; }
+
+/* ── Shoot card progress bar ───────────────── */
+.shoot-bar-el {
+  position: absolute; bottom: 0; left: 0;
+  height: 2px; width: 0%;
+  background: rgba(250,244,235,0.7);
+  z-index: 20;
+}
