@@ -183,10 +183,10 @@ export default function Gallery() {
               <motion.div
                 key={shoot.id}
                 layout
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{   opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.45, delay: i * 0.05 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                transition={{ duration: 0.6, ease, delay: i * 0.07 }}
               >
                 <ShootCard shoot={shoot} onOpen={openLightbox} />
               </motion.div>
