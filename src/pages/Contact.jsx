@@ -226,50 +226,36 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* ── Full-width dark form band ── */}
-      <section className="relative bg-ink overflow-hidden">
-        {/* Organic warm glow accents */}
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: `
-            radial-gradient(ellipse 50% 80% at 0% 50%, rgba(200,146,42,0.12) 0%, transparent 70%),
-            radial-gradient(ellipse 40% 60% at 100% 30%, rgba(181,66,10,0.08) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 40% at 50% 100%, rgba(200,146,42,0.06) 0%, transparent 70%)
-          `
-        }} />
-        {/* Subtle grain texture */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E")`,
-          backgroundSize: '250px 250px'
-        }} />
-
-        <div className="relative z-10 max-w-6xl mx-auto px-8 md:px-20 py-28 grid md:grid-cols-2 gap-20 lg:gap-32 items-start">
+      {/* ── Form + connect section ── */}
+      <section className="bg-parchment">
+        <div className="max-w-6xl mx-auto px-8 md:px-20 py-28 grid md:grid-cols-2 gap-20 lg:gap-32 items-start">
 
           {/* Left — form */}
           <FadeUp delay={0.1}>
             <div>
               <div className="flex items-center gap-4 mb-10">
                 <div className="w-10 h-px bg-gold/40" />
-                <span className="font-sans text-[0.52rem] tracking-[0.45em] uppercase text-gold/70">
+                <span className="font-sans text-[0.52rem] tracking-[0.45em] uppercase text-sepia/60">
                   Send a message
                 </span>
               </div>
               <h2
-                className="font-elegant italic font-light text-parchment mb-14 leading-tight"
+                className="font-elegant italic font-light text-ink mb-14 leading-tight"
                 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)' }}
               >
                 Tell me about<br />your moment
               </h2>
               <form onSubmit={handleSubmit} className="flex flex-col gap-9">
-                <Field id="name"    label="Your name"     placeholder="e.g. Anna de Vries"             required brown />
-                <Field id="email"   label="Email address" placeholder="hello@youremail.com" type="email" required brown />
-                <Field id="subject" label="Subject"       placeholder="Shoot inquiry, collaboration…"   brown />
-                <Field id="message" label="Message"       placeholder="Tell me a bit about what you have in mind…" required textarea brown />
+                <Field id="name"    label="Your name"     placeholder="e.g. Anna de Vries"             required />
+                <Field id="email"   label="Email address" placeholder="hello@youremail.com" type="email" required />
+                <Field id="subject" label="Subject"       placeholder="Shoot inquiry, collaboration…" />
+                <Field id="message" label="Message"       placeholder="Tell me a bit about what you have in mind…" required textarea />
 
                 <div className="flex items-center gap-6 pt-4">
                   <button
                     type="submit"
                     disabled={sending}
-                    className="relative font-sans text-[0.58rem] tracking-[0.35em] uppercase text-ink bg-gold/90 px-10 py-4 overflow-hidden hover:bg-gold transition-colors duration-500 disabled:opacity-60"
+                    className="relative font-sans text-[0.58rem] tracking-[0.35em] uppercase text-parchment bg-ink px-10 py-4 overflow-hidden hover:bg-brown transition-colors duration-500 disabled:opacity-60"
                     style={{ borderRadius: '2px' }}
                   >
                     {sending ? 'Sending…' : 'Send message'}
@@ -295,11 +281,11 @@ export default function Contact() {
               <div>
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-10 h-px bg-gold/40" />
-                  <span className="font-sans text-[0.52rem] tracking-[0.45em] uppercase text-gold/70">
+                  <span className="font-sans text-[0.52rem] tracking-[0.45em] uppercase text-sepia/60">
                     Connect
                   </span>
                 </div>
-                <p className="font-sans font-light text-parchment/60 leading-loose mb-6" style={{ fontSize: '0.87rem' }}>
+                <p className="font-sans font-light text-sepia leading-loose mb-6" style={{ fontSize: '0.87rem' }}>
                   The quickest way to reach me is through Instagram. I'm always
                   open to new shoots, collaborations, or just a friendly hello.
                 </p>
@@ -307,20 +293,20 @@ export default function Contact() {
                   href="https://www.instagram.com/graingracephotography?igsh=MXdkMWZ6NHU2eXQ2ag=="
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block font-sans text-[0.56rem] tracking-[0.3em] uppercase text-gold/80 border-b border-gold/25 pb-1 hover:border-gold hover:text-gold transition-all duration-300 mb-10"
+                  className="inline-block font-sans text-[0.56rem] tracking-[0.3em] uppercase text-sepia/70 border-b border-sepia/25 pb-1 hover:border-gold hover:text-gold transition-all duration-300 mb-10"
                 >
                   @graingracephotography
                 </a>
                 <IgCard />
               </div>
 
-              <div className="w-full h-px bg-parchment/8" />
+              <div className="w-full h-px bg-ink/8" />
 
               <div>
-                <span className="font-sans text-[0.52rem] tracking-[0.45em] uppercase text-gold/70 block mb-4">
+                <span className="font-sans text-[0.52rem] tracking-[0.45em] uppercase text-sepia/60 block mb-4">
                   Based in
                 </span>
-                <p className="font-elegant italic text-parchment/50 leading-none" style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)' }}>
+                <p className="font-elegant italic text-ink/50 leading-none" style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)' }}>
                   The Netherlands
                 </p>
               </div>
