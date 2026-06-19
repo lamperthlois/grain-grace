@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 const ease = [0.16, 1, 0.3, 1]
 
 const TEASER_PHOTOS = [
-  'couple/levi & kris/5d62f827-09c3-4e74-91ed-4fd6e11ef3ab.jpeg',
-  'couple/levi & kris/DSCF5894.jpeg',
+  'solo/solo shoot 5/DSCF7258.jpg',
+  'family/Samuels/IMG_2108.JPG',
   'pregnancy/nadia/pregnancy 1.JPG',
   'family/Bijlards/DSCF5599.jpeg',
 ]
