@@ -9,7 +9,7 @@ const STRIP_PHOTOS = [
   'solo/solo shoot 4/solo 20.JPG',
   'solo/solo shoot 3/solo 18.JPG',
   'family/Samuels/IMG_2100.jpg',
-  'solo/solo shoot 1/solo 9.jpeg',
+  'solo/solo shoot 1/solo 8.jpeg',
   'pregnancy/nadia/pregnancy 2.jpeg',
 ]
 
