@@ -1,5 +1,5 @@
 const STRIP_PHOTOS = [
-  'solo/solo shoot 1/solo 1.jpeg',
+  'solo/solo shoot 1/solo 2.jpeg',
   'solo/solo shoot 1/solo 4.jpeg',
   'pregnancy/nadia/pregnancy 1.JPG',
   'solo/solo shoot 2/solo 12.jpeg',
