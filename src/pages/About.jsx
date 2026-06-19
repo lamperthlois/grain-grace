@@ -47,8 +47,8 @@ export default function About() {
       </div>
 
       {/* ── 2. Script greeting + story ── */}
-      <section className="bg-parchment py-24 px-8 md:px-20">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-[1fr_1.1fr] gap-14 items-center">
+      <section className="bg-parchment py-14 md:py-24 px-8 md:px-20">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-[1fr_1.1fr] gap-10 md:gap-14 items-center">
 
           {/* Photo */}
           <FadeUp>
@@ -102,7 +102,7 @@ export default function About() {
       </section>
 
       {/* ── 3. Full-bleed photo divider ── */}
-      <div className="w-full overflow-hidden" style={{ height: '85vh' }}>
+      <div className="w-full overflow-hidden" style={{ height: 'clamp(50vh, 85vh, 85vh)' }}>
         <img
           src="/about me/DSCF4155.jpeg"
           alt=""
@@ -111,8 +111,8 @@ export default function About() {
       </div>
 
       {/* ── 4. Side-by-side: text left, photo right ── */}
-      <section className="bg-parchment py-24 px-8 md:px-20">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <section className="bg-parchment py-14 md:py-24 px-8 md:px-20">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
 
           <FadeUp>
             <p
@@ -154,7 +154,7 @@ export default function About() {
 
 
       {/* ── 6. CTA ── */}
-      <section className="bg-parchment py-24 px-8 text-center">
+      <section className="bg-parchment py-14 md:py-24 px-8 text-center">
         <FadeUp>
           <p
             className="font-script text-ink mb-6"

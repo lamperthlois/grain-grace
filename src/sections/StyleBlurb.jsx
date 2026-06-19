@@ -35,7 +35,7 @@ const LINKS = [
 export default function StyleBlurb() {
   return (
     <section className="overflow-hidden">
-      <div className="grid md:grid-cols-2 min-h-[85vh]">
+      <div className="grid md:grid-cols-2 min-h-0 md:min-h-[85vh]">
 
         {/* Left — portrait photo */}
         <div className="relative overflow-hidden min-h-[60vw] md:min-h-0">

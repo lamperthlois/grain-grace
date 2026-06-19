@@ -155,7 +155,7 @@ export default function InstagramSection() {
   }, [])
 
   return (
-    <section className="bg-parchment py-24 px-8 md:px-20">
+    <section className="bg-parchment py-16 md:py-24 px-8 md:px-20">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -214,7 +214,7 @@ export default function InstagramSection() {
 
         {/* CTA */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
           animate={{ opacity: vis ? 1 : 0, y: vis ? 0 : 10 }}
           transition={{ duration: 0.8, ease, delay: 0.55 }}
         >

@@ -29,7 +29,7 @@ export default function Lightbox({ images, index, onClose, onPrev, onNext }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[300] flex items-center justify-center bg-ink/95"
+      className="fixed inset-0 z-[150] flex items-center justify-center bg-ink/95"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{   opacity: 0 }}

@@ -164,6 +164,7 @@ export const shoots = [
 ]
 
 export const heroPhotos = [
+  { src: 'background/DSCF7617.jpg' },
   { src: 'background/background 3.JPG' },
   { src: 'background/DSCF3368.jpeg' },
   { src: 'background/DSCF5533.jpeg' },
@@ -177,7 +178,6 @@ export const heroPhotos = [
   { src: 'background/IMG_2111.JPG' },
   { src: 'background/DSCF0673.jpg' },
   { src: 'background/DSCF0996.jpg' },
-  { src: 'background/DSCF7617.jpg' },
 ]
 
 export const igGridPhotos = [

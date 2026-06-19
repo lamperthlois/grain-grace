@@ -228,7 +228,7 @@ export default function Contact() {
 
       {/* ── Form + connect section ── */}
       <section className="bg-parchment">
-        <div className="max-w-6xl mx-auto px-8 md:px-20 py-28 grid md:grid-cols-2 gap-20 lg:gap-32 items-start">
+        <div className="max-w-6xl mx-auto px-8 md:px-20 py-16 md:py-28 grid md:grid-cols-2 gap-14 md:gap-20 lg:gap-32 items-start">
 
           {/* Left — form */}
           <FadeUp delay={0.1}>

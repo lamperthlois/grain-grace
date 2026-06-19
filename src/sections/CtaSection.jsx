@@ -23,10 +23,10 @@ export default function CtaSection() {
 
   return (
     <section ref={ref} className="bg-parchment overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8 md:px-16 py-24 md:py-32 flex flex-col md:flex-row items-center gap-12 md:gap-0">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 py-16 md:py-32 flex flex-col md:flex-row items-center gap-10 md:gap-0">
 
         {/* Left — text + button */}
-        <div className="md:w-[38%] flex-shrink-0 flex flex-col items-start">
+        <div className="md:w-[38%] flex-shrink-0 flex flex-col items-center md:items-start text-center md:text-left">
           <motion.h2
             className="font-elegant italic font-light text-ink leading-[1.15] mb-10"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 4rem)' }}
@@ -50,7 +50,7 @@ export default function CtaSection() {
         </div>
 
         {/* Right — two floating photos */}
-        <div className="md:w-[62%] relative flex items-start justify-center" style={{ height: 'clamp(380px, 55vw, 620px)' }}>
+        <div className="hidden md:flex md:w-[62%] relative items-start justify-center" style={{ height: 'clamp(280px, 55vw, 620px)' }}>
 
           {/* Large photo — center, taller */}
           <motion.div
