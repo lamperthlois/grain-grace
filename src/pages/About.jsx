@@ -54,7 +54,7 @@ export default function About() {
           <FadeUp>
             <div className="overflow-hidden">
               <motion.img
-                src="/lois/lois 1.jpg"
+                src="/lois/about me.jpg"
                 alt="Loïs"
                 className="w-full object-cover object-top"
                 style={{ height: 'clamp(45vh, 55vw, 68vh)' }}

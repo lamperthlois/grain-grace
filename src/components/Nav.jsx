@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion'
 
 const LINKS = [
   { href: '/',        label: 'Home' },
@@ -13,12 +13,50 @@ const ease = [0.16, 1, 0.3, 1]
 
 const DARK_HERO_PAGES = ['/', '/about', '/contact']
 
+function DockLink({ link, active, overPhoto, mouseX, index }) {
+  const ref = useRef()
+
+  const distance = useTransform(mouseX, (val) => {
+    if (!ref.current || val === -1) return 150
+    const rect = ref.current.getBoundingClientRect()
+    const center = rect.left + rect.width / 2
+    return Math.abs(val - center)
+  })
+
+  const scale = useTransform(distance, [0, 80, 150], [1.35, 1.1, 1])
+  const springScale = useSpring(scale, { stiffness: 300, damping: 25 })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9, ease, delay: 0.15 + index * 0.07 }}
+      style={{ scale: springScale, transformOrigin: 'center' }}
+    >
+      <Link
+        to={link.href}
+        className={`line-draw font-sans font-medium text-[0.6rem] tracking-[0.22em] uppercase transition-colors duration-400 ${
+          active
+            ? overPhoto ? 'text-parchment' : 'text-ink'
+            : overPhoto
+              ? 'text-gold hover:text-parchment'
+              : 'text-sepia hover:text-ink'
+        }`}
+      >
+        {link.label}
+      </Link>
+    </motion.div>
+  )
+}
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const location  = useLocation()
   const hasDarkHero = DARK_HERO_PAGES.includes(location.pathname)
   const overPhoto   = hasDarkHero && !scrolled
+  const mouseX = useMotionValue(-1)
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 80)
@@ -28,6 +66,14 @@ export default function Nav() {
   }, [])
 
   useEffect(() => { setMenuOpen(false) }, [location.pathname])
+
+  const handleMouseMove = useCallback((e) => {
+    mouseX.set(e.clientX)
+  }, [mouseX])
+
+  const handleMouseLeave = useCallback(() => {
+    mouseX.set(-1)
+  }, [mouseX])
 
   return (
     <>
@@ -55,32 +101,22 @@ export default function Nav() {
           </Link>
         </motion.div>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-9">
-          {LINKS.map((link, i) => {
-            const active = location.pathname === link.href
-            return (
-              <motion.div
-                key={link.href}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, ease, delay: 0.15 + i * 0.07 }}
-              >
-                <Link
-                  to={link.href}
-                  className={`line-draw font-sans text-[0.6rem] tracking-[0.22em] uppercase transition-colors duration-400 ${
-                    active
-                      ? overPhoto ? 'text-parchment' : 'text-ink'
-                      : overPhoto
-                        ? 'text-gold/90 hover:text-gold'
-                        : 'text-sepia hover:text-ink'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </motion.div>
-            )
-          })}
+        {/* Desktop nav — dock magnification */}
+        <nav
+          className="hidden md:flex items-center gap-9"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          {LINKS.map((link, i) => (
+            <DockLink
+              key={link.href}
+              link={link}
+              active={location.pathname === link.href}
+              overPhoto={overPhoto}
+              mouseX={mouseX}
+              index={i}
+            />
+          ))}
         </nav>
 
         {/* Hamburger button — mobile only */}
