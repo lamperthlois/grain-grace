@@ -1,15 +1,15 @@
 const STRIP_PHOTOS = [
-  'solo/solo shoot 1/solo 1.jpeg',
-  'solo/solo shoot 1/solo 4.jpeg',
+  'solo/solo shoot 5/DSCF7114.jpg',
+  'solo/solo shoot 5/DSCF7258.jpg',
   'pregnancy/nadia/pregnancy 1.JPG',
   'solo/solo shoot 2/solo 12.jpeg',
   'family/Bijlards/family 1.JPG',
-  'solo/solo shoot 1/solo 7.jpeg',
+  'solo/solo shoot 7/DSCF0432.jpg',
   'pregnancy/nadia/pregnancy 4.jpeg',
   'solo/solo shoot 4/solo 20.JPG',
   'solo/solo shoot 3/solo 18.JPG',
   'family/Samuels/IMG_2100.jpg',
-  'solo/solo shoot 1/solo 9.jpeg',
+  'solo/solo shoot 6/DSCF0197.jpg',
   'pregnancy/nadia/pregnancy 2.jpeg',
 ]
 

@@ -76,7 +76,7 @@ export default function CtaSection() {
             transition={{ duration: 1, ease, delay: 0.28 }}
           >
             <motion.img
-              src="/solo/solo shoot 1/solo 3.jpeg"
+              src="/solo/solo shoot 5/DSCF7258.jpg"
               alt=""
               className="w-full h-full object-cover object-top"
               whileHover={{ scale: 1.04 }}

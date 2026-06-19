@@ -1,11 +1,5 @@
 export const shoots = [
   {
-    id: 'solo-1',
-    category: 'solo',
-    label: 'Solo shoot',
-    photos: Array.from({ length: 11 }, (_, i) => `solo/solo shoot 1/solo ${i + 1}.jpeg`),
-  },
-  {
     id: 'solo-2',
     category: 'solo',
     label: 'Solo shoot',
