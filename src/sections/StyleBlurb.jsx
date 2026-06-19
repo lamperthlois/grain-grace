@@ -38,7 +38,7 @@ export default function StyleBlurb() {
       <div className="grid md:grid-cols-2 min-h-0 md:min-h-[85vh]">
 
         {/* Left — portrait photo */}
-        <div className="relative overflow-hidden min-h-[60vw] md:min-h-0">
+        <div className="relative overflow-hidden min-h-[110vw] md:min-h-0">
           <motion.img
             src="/lois/lois 1.jpg"
             alt="Loïs Lamperth"

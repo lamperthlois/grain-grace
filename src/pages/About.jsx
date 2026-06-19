@@ -57,7 +57,7 @@ export default function About() {
                 src="/lois/about me.jpg"
                 alt="Loïs"
                 className="w-full object-cover object-top"
-                style={{ height: 'clamp(45vh, 55vw, 68vh)' }}
+                style={{ height: 'clamp(55vh, 130vw, 80vh)' }}
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 1.4, ease }}
               />
