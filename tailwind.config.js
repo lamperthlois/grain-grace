@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        parchment: '#f5eddb',
+        parchment: '#f3ede2',
         paper:     '#ede3ce',
         cream:     '#faf5ea',
         ink:       '#1c0d04',

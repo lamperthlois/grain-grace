@@ -85,11 +85,19 @@ export default function WorkTeaser() {
         </motion.div>
       </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-12 grid-rows-2 gap-3" style={{ height: 'clamp(400px, 65vw, 680px)' }}>
+      {/* Desktop: masonry grid */}
+      <div className="max-w-6xl mx-auto hidden md:grid grid-cols-12 grid-rows-2 gap-3" style={{ height: 'clamp(400px, 65vw, 680px)' }}>
         <RevealPhoto src={TEASER_PHOTOS[0]} delay={0.1}  className="col-span-5 row-span-2" />
         <RevealPhoto src={TEASER_PHOTOS[1]} delay={0.18} className="col-span-4 row-span-1" position="center 70%" />
         <RevealPhoto src={TEASER_PHOTOS[2]} delay={0.24} className="col-span-3 row-span-1" />
         <RevealPhoto src={TEASER_PHOTOS[3]} delay={0.3}  className="col-span-7 row-span-1" position="center 62%" />
+      </div>
+      {/* Mobile: stacked two-column */}
+      <div className="max-w-6xl mx-auto grid md:hidden grid-cols-2 gap-3">
+        <RevealPhoto src={TEASER_PHOTOS[0]} delay={0.1}  className="col-span-1 aspect-[3/4]" />
+        <RevealPhoto src={TEASER_PHOTOS[1]} delay={0.18} className="col-span-1 aspect-[3/4]" position="center 70%" />
+        <RevealPhoto src={TEASER_PHOTOS[2]} delay={0.24} className="col-span-1 aspect-[3/4]" />
+        <RevealPhoto src={TEASER_PHOTOS[3]} delay={0.3}  className="col-span-1 aspect-[3/4]" position="center 62%" />
       </div>
     </section>
   )

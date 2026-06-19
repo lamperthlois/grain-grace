@@ -134,7 +134,7 @@ export default function Nav() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-[199] bg-parchment/98 backdrop-blur-md flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-[199] bg-parchment flex flex-col items-center justify-center gap-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -152,7 +152,7 @@ export default function Nav() {
                   <Link
                     to={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`font-sans text-[0.7rem] tracking-[0.3em] uppercase ${active ? 'text-ink' : 'text-sepia'}`}
+                    className={`font-sans font-medium text-[0.85rem] tracking-[0.3em] uppercase ${active ? 'text-ink' : 'text-sepia'}`}
                   >
                     {link.label}
                   </Link>
