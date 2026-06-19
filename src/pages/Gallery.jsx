@@ -173,26 +173,28 @@ export default function Gallery() {
 
       {/* Grid */}
       <div className="px-8 md:px-20 py-14">
-        <motion.div
-          className="grid gap-4"
-          style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))' }}
-          layout
-        >
-          <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={filter}
+            className="grid gap-4"
+            style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease }}
+          >
             {filtered.map((shoot, i) => (
               <motion.div
                 key={shoot.id}
-                layout
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, transition: { duration: 0.3 } }}
-                transition={{ duration: 0.6, ease, delay: i * 0.07 }}
+                transition={{ duration: 0.5, ease, delay: i * 0.06 }}
               >
                 <ShootCard shoot={shoot} onOpen={openLightbox} />
               </motion.div>
             ))}
-          </AnimatePresence>
-        </motion.div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       <Footer />
