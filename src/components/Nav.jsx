@@ -80,8 +80,8 @@ export default function Nav() {
       <motion.header
         className="fixed top-0 left-0 right-0 z-[200] flex justify-between items-center px-8 md:px-14 py-5"
         animate={{
-          backgroundColor: scrolled || menuOpen ? 'rgba(245,237,219,0.96)' : 'rgba(0,0,0,0)',
-          backdropFilter:  scrolled || menuOpen ? 'blur(14px)' : 'blur(0px)',
+          backgroundColor: menuOpen ? 'rgba(243,237,226,0.96)' : scrolled ? 'rgba(243,237,226,0.45)' : 'rgba(0,0,0,0)',
+          backdropFilter:  scrolled || menuOpen ? 'blur(20px)' : 'blur(0px)',
           borderBottom:    scrolled ? '1px solid rgba(28,13,4,0.08)' : '1px solid transparent',
         }}
         transition={{ duration: 0.4 }}
