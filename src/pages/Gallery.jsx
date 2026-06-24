@@ -10,6 +10,7 @@ const FILTERS = [
   { key: 'pregnancy', label: 'Pregnancy' },
   { key: 'family',    label: 'Family' },
   { key: 'couple',    label: 'Couple' },
+  { key: 'newborn',   label: 'Newborn' },
 ]
 
 const SLIDE_MS = 6000

@@ -172,6 +172,27 @@ export const shoots = [
       'couple/levi & kris/d985ca49-06ba-4a06-8218-1b71859687a6.jpeg',
     ],
   },
+  {
+    id: 'newborn-1',
+    category: 'newborn',
+    label: 'Newborn',
+    photos: [
+      'newborn/DSCF1254.jpg',
+      'newborn/DSCF1266.jpg',
+      'newborn/DSCF1271 3.jpg',
+      'newborn/DSCF1276.jpg',
+      'newborn/DSCF1290.jpg',
+      'newborn/DSCF1307.jpg',
+      'newborn/DSCF1308.jpg',
+      'newborn/DSCF1338 1.jpg',
+      'newborn/DSCF1506 1.jpg',
+      'newborn/DSCF1508 1.jpg',
+      'newborn/DSCF1551.jpg',
+      'newborn/DSCF1571.jpg',
+      'newborn/DSCF1586 1.jpg',
+      'newborn/DSCF1589 2.jpg',
+    ],
+  },
 ]
 
 export const heroPhotos = [
@@ -189,6 +210,11 @@ export const heroPhotos = [
   { src: 'background/IMG_2111.JPG' },
   { src: 'background/DSCF0673.jpg' },
   { src: 'background/DSCF0996.jpg' },
+  { src: 'background/DSCF1254.jpg' },
+  { src: 'background/DSCF1266.jpg' },
+  { src: 'background/DSCF1276.jpg' },
+  { src: 'background/DSCF1338 1.jpg' },
+  { src: 'background/DSCF6395.JPG' },
 ]
 
 export const igGridPhotos = [
